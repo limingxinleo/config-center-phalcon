@@ -13,7 +13,7 @@ class TestTask extends Task
             ['key' => 'sss2']
         ]);
 
-        $d->val = 'sss2';
+        $d->val = 123;
         $d->save();
     }
 
