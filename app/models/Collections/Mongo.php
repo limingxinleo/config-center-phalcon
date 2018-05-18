@@ -9,6 +9,7 @@
 namespace App\Models\Collections;
 
 use Phalcon\Mvc\MongoCollection;
+use App\Utils\Mongo as MongoUtil;
 
 abstract class Mongo extends MongoCollection
 {
@@ -20,5 +21,18 @@ abstract class Mongo extends MongoCollection
     public function getSource()
     {
         // 返回 Mongo 表名
+    }
+
+    public function beforeCreate()
+    {
+        // Set the creation date
+        $this->created_at = MongoUtil::datetime();
+        $this->updated_at = MongoUtil::datetime();
+    }
+
+    public function beforeUpdate()
+    {
+        // Set the modification date
+        $this->updated_at = MongoUtil::datetime();
     }
 }

@@ -143,6 +143,6 @@ class Mongo implements MongoInteface
         if (!isset($microtime)) {
             $microtime = microtime(true) * 1000;
         }
-        return new UTCDateTime($microtime);
+        return new UTCDateTime($microtime + 3600 * 8);
     }
 }
