@@ -28,11 +28,13 @@ abstract class Mongo extends MongoCollection
         // Set the creation date
         $this->created_at = MongoUtil::datetime();
         $this->updated_at = MongoUtil::datetime();
+        $this->version = 0;
     }
 
     public function beforeUpdate()
     {
         // Set the modification date
         $this->updated_at = MongoUtil::datetime();
+        $this->version++;
     }
 }

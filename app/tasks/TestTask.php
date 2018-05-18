@@ -9,8 +9,11 @@ class TestTask extends Task
 
     public function mainAction()
     {
-        $d = new Conf();
-        $d->key='sss2';
+        $d = Conf::findFirst([
+            ['key' => 'sss2']
+        ]);
+
+        $d->val = 'sss2';
         $d->save();
     }
 
