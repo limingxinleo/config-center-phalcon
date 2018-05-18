@@ -17,4 +17,9 @@ class ErrorCode extends Enum
      * @Message('系统错误')
      */
     public static $ENUM_SYSTEM_ERROR = 400;
+
+    /**
+     * @Message('配置版本更新失败')
+     */
+    public static $ENUM_CONF_VERSION_UPDATE_FAIL = 1000;
 }

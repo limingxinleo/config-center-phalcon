@@ -23,6 +23,6 @@
 # 增加key索引
 > db.conf.createIndex({key:1},{unique:true});
 # 添加配置中心版本号
-> db.conf.insert({key:"version", val:0, created_at:new Date(2015,5,27), updated_at:new Date(2015,5,27)});
+> db.conf.insert({key:"version", val:0, created_at:new Date(2015,5,27,8), updated_at:new Date(2015,5,27,8)});
 > db.conf.updateOne({key:"version"},{"$inc":{val:1}});
 ~~~
